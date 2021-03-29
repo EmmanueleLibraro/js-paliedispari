@@ -1,7 +1,8 @@
 // Chiedere all’utente di inserire una parola
 // Creare una funzione per capire se la parola inserita è palindroma
 
-var parolaUtente = parseInt ( prompt('Inserisci una parola'));
+var parolaUtente =  prompt ('Inserisci una parola');
+console.log(parolaUtente);
 
 var capovolta = parolaInvertita(parolaUtente);
 console.log(capovolta);
@@ -27,3 +28,15 @@ if( parolaUtente === capovolta){
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
+
+var utente = parseInt( prompt ("Scegli un numero da 1 a 5"));
+
+var somma = utente + genRandom();
+console.log("somma", + somma);
+
+
+function genRandom (num){
+
+    var computer = Math.floor(Math.random() * 5) + 1;
+
+}
