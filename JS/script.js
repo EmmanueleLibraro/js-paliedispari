@@ -20,7 +20,7 @@ function parolaInvertita (word){
 if( parolaUtente === capovolta){
     console.log("la parola è palindroma ", + parolaUtente);
 }else if(parolaUtente !== capovolta){
-    console.log();
+    console.log("la parola non è palindroma");
 }
   
 
@@ -30,10 +30,10 @@ if( parolaUtente === capovolta){
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
-
+var utente2 = parseInt( prompt ("Scegli pari o dispari"));
 var utente = parseInt( prompt ("Scegli un numero da 1 a 5"));
 
-var sommaPcUtente = utente + genRandom();
+var sommaPcUtente = utente + genRandom() + pariDispari();
 console.log("somma", + sommaPcUtente);
 
 var verificaPariDispari = sommaPcUtente + pariDispari();
