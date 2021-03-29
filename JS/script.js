@@ -18,9 +18,11 @@ function parolaInvertita (word){
 }
 
 if( parolaUtente === capovolta){
-    console.log("la parola è palindroma ", + capovolta);
+    console.log("la parola è palindroma ", + parolaUtente);
+}else if(parolaUtente !== capovolta){
+    console.log();
 }
-
+  
 
 //L’utente sceglie pari o dispari
 // e inserisce un numero da 1 a 5.
@@ -31,12 +33,25 @@ if( parolaUtente === capovolta){
 
 var utente = parseInt( prompt ("Scegli un numero da 1 a 5"));
 
-var somma = utente + genRandom();
-console.log("somma", + somma);
+var sommaPcUtente = utente + genRandom();
+console.log("somma", + sommaPcUtente);
+
+var verificaPariDispari = sommaPcUtente + pariDispari();
 
 
-function genRandom (num){
+function genRandom (num1){
+    var num1 = Math.floor(Math.random() * 5) + 1;
 
-    var computer = Math.floor(Math.random() * 5) + 1;
+    var prova1 = "";
 
+    return prova1;
+}
+
+
+function pariDispari (num) {
+    if(num % 2 === 0 ){
+        console.log("Pari", num);
+    }else{
+        console.log("Dispari", num);
+    }
 }
