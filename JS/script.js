@@ -1,7 +1,7 @@
 // Chiedere all’utente di inserire una parola
 // Creare una funzione per capire se la parola inserita è palindroma
 
-var parolaUtente =  prompt ('Inserisci una parola');
+var parolaUtente =  prompt ('Inserisci una parola').toLocaleLowerCase().trim();
 console.log(parolaUtente);
 
 var capovolta = parolaInvertita(parolaUtente);
@@ -18,9 +18,9 @@ function parolaInvertita (word){
 }
 
 if( parolaUtente === capovolta){
-    console.log("la parola è palindroma ", + parolaUtente);
+    console.log("La parola è palindroma ", + parolaUtente);
 }else if(parolaUtente !== capovolta){
-    console.log("la parola non è palindroma");
+    console.log("La parola non è palindroma");
 }
   
 
@@ -30,28 +30,35 @@ if( parolaUtente === capovolta){
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
-var utente2 = parseInt( prompt ("Scegli pari o dispari"));
-var utente = parseInt( prompt ("Scegli un numero da 1 a 5"));
+var sceltaGiocatore = parseInt( prompt ("Scegli pari o dispari")).toLocaleLowerCase().trim();
+var numeroGiocatore = parseInt( prompt ("Scegli un numero da 1 a 5"));
 
-var sommaPcUtente = utente + genRandom() + pariDispari();
-console.log("somma", + sommaPcUtente);
+var numeroOpp = getRandomNumber(1, 5);
 
-var verificaPariDispari = sommaPcUtente + pariDispari();
+//Somma numeri
+var somma = numeroGiocatore + numeroOpp;
 
+//Pari dispari
+var risultato = verificaPariDispari(somma);
 
-function genRandom (num1){
-    var num1 = Math.floor(Math.random() * 5) + 1;
+//Vincitore
+if(risultato === sceltaGiocatore){
+    console.log("Vince giocatore");
 
-    var prova1 = "";
+}else{
+    console.log("Vince computer");
+}
 
-    return prova1;
+//Genera num
+function getRandomNumber(min, max) {
+    return Math.floor( Math.random() * (man - min) ) + min;
 }
 
 
-function pariDispari (num) {
-    if(num % 2 === 0 ){
-        console.log("Pari", num);
-    }else{
-        console.log("Dispari", num);
+//Verifica numero pari e dispari
+function verificaPariDispari (num) {
+    if(num % 2 ===0){
+        return "pari"
     }
+    return "dispari"
 }
